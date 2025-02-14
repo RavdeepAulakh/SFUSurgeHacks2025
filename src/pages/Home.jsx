@@ -47,6 +47,10 @@ function Home() {
     }
   };
 
+  const loadTopPlayers = () => {
+    
+  }
+
   return (
     <div
   style={{
