@@ -47,9 +47,6 @@ function Home() {
     }
   };
 
-  const loadTopPlayers = () => {
-    
-  }
 
   return (
     <div
@@ -127,7 +124,13 @@ function Home() {
           key={index}
           style={{ display: "flex", justifyContent: "space-between", padding: "5px 0" }}
         >
-          <span>{index + 1}. {player.name}</span>
+          <span>
+            {index === 0 && <img src="/firstPlace.png" alt="1st place" style={{ width: "50px", height: "auto", marginRight: "5px" }} />}
+            {index === 1 && <img src="/secondPlace.png" alt="2nd place" style={{ width: "50px", height: "auto", marginRight: "5px" }} />}
+            {index === 2 && <img src="/thirdPlace.png" alt="3rd place" style={{ width: "50px", height: "auto", marginRight: "5px" }} />}
+            {index > 2 && index + 1}
+          </span>
+          <span>{player.name}</span>
           <span>{player.score}</span>
         </li>
       ))}
