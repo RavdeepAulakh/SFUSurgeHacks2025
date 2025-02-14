@@ -58,6 +58,9 @@ function Home() {
     gap: "20px", // Space between game and leaderboard
     width: "100%",
     padding: "20px",
+    backgroundImage: "url('/backgroundstripes.png')",
+    backgroundSize: "100%", // Keeps the image at its original size
+    backgroundPosition: "top left", // Ensures the pattern starts from the top-left
   }}
 >
   {/* Unity Game iframe */}
