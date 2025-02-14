@@ -129,8 +129,31 @@ function Home() {
       ))}
     </ul>
   </div>
-</div>
 
+  {/* How to Play Section */}
+  <div
+        style={{
+          width: "80%", // Make it smaller than the full width
+          backgroundColor: "#f9f9f9", // Light background
+          border: "3px solid #86653D", // Light brown border
+          padding: "20px",
+          borderRadius: "10px",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+          textAlign: "center",
+          marginTop: "20px", // Space between iframe and how-to-play section
+          marginBottom: "20px",
+        }}
+      >
+        <h2>How to Play</h2>
+        <p>Welcome to the game! Here’s a brief overview of how to play:</p>
+        <ol style={{ textAlign: "left" }}>
+          <li>Start the game by clicking on the "Play" button in the Unity game iframe above.</li>
+          <li>Control the character using the on-screen buttons or keyboard inputs.</li>
+          <li>Aim for the highest score and compete with others in the leaderboard!</li>
+        </ol>
+        <p>Enjoy the game, and may the best player win!</p>
+      </div>
+    </div>
   );
 }
 
