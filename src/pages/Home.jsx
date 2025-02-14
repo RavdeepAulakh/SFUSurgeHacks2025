@@ -55,7 +55,8 @@ function Home() {
         alignItems: "center",
         flexDirection: "column",
         minHeight: "100vh",  // Ensure the container takes up at least the full viewport height
-        backgroundImage: "url('/penguinBackground.jpg')", // Background image
+        //backgroundImage: "url('/penguinBackground.jpg')", // Background image
+        backgroundColor: '#F7E1D7',
         backgroundSize: "cover", // Ensures the image covers the entire screen
         backgroundPosition: "center", // Centers the background image
         backgroundRepeat: "no-repeat", // Prevents repeating the image
@@ -65,6 +66,12 @@ function Home() {
     >
       {/* Unity Game iframe */}
       <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gridTemplateColumns: "2fr 1fr", // 2 columns
+        }}>
+          <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -83,39 +90,54 @@ function Home() {
           }}
           title="Unity Game"
           frameBorder="0"
-        />
+        />  
       </div>
-
-      {/* Leaderboard Section */}
-    <div
-    style={{
-        position: "absolute",
-        top: "20%",
-        right: "5%",
-        width: "250px",
-        backgroundColor: "#d9f7be",
-        border: "5px solid #86653D",
-        padding: "20px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-        maxHeight: "80vh",
-        overflowY: "auto",
-        textAlign: "center", // Center text inside the box
-    }}
-    >
-    <h2>Leaderboard</h2>
-    <ul style={{ listStyle: "none", padding: 0 }}>
-        {players.map((player, index) => (
-        <li 
-            key={index} 
-            style={{ display: "flex", justifyContent: "space-between", padding: "5px 0" }}
-        >
-            <span>{index + 1}. {player.name}</span>
-            <span>{player.score}</span>
-        </li>
-        ))}
-    </ul>
-    </div>
+          {/* Leaderboard Section */}
+          <div
+            style={{
+              position: "absolute", // Position it absolutely
+              top: "20%", // Position it slightly higher up
+              right: "5%", // Place it on the right side
+              width: "250px", // Smaller width for the leaderboard
+              backgroundColor: "#B0C4B1", // Light green background
+              border: "5px solid #4A5759", // Light brown border
+              padding: "20px",
+              borderRadius: "10px",
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+              maxHeight: "80vh", // Make sure it doesn't overflow the screen vertically
+              overflowY: "auto", // Allow scrolling if it overflows
+            }}
+          >
+            <div style={{
+              position: "relative"
+            }}>
+              <img src="/leaderboard.png" alt="leaderboardBanner" style={{ width: "100%", height: "auto" }} />
+              <h2 style={{
+                position: "absolute",
+                top: "50%", // Center vertically
+                left: "50%", // Center horizontally
+                transform: "translate(-50%, -50%)", // Perfect centering
+                color: "black",
+                padding: "10px",
+                borderRadius: "5px",
+                fontSize: "1.2rem",
+              }}>Leaderboard</h2>
+            </div>
+            
+            <ul style={{ listStyle: "none", padding: 0 }}>
+                {players.map((player, index) => (
+                <li 
+                    key={index} 
+                    style={{ display: "flex", justifyContent: "space-between", padding: "5px 0" }}
+                >
+                    <span>{index + 1}. {player.name}</span>
+                    <span>{player.score}</span>
+                </li>
+                ))}
+            </ul>
+          </div>
+      </div>
+      
 
       {/* How to Play Section */}
       <div
