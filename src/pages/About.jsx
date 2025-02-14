@@ -13,12 +13,19 @@ const styles = {
     justifyContent: "center",
     padding: "20px",
   },
+  toolHeader: {
+    display: "inline-block",  // Makes it behave like an inline element
+    verticalAlign: "middle", // Aligns text to the baseline
+  },
   tool: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)", // 2 columns
     gap: "20px",
     justifyContent: "center",
     padding: "20px",
+  },
+  img: {
+    maxwidth: "100px",
   }
 }
 
@@ -33,6 +40,9 @@ function About() {
     <div style={styles.about}>
       <h1>About Us</h1>
       <h2>Project Description</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
+      </p>
       <h2>Project Team</h2>
       
       <div style={styles.team}>
@@ -47,11 +57,13 @@ function About() {
       </div>
       
       <div style={styles.tool}>
-        <h2>Project Tools</h2>
+        <div styles={styles.toolHeader}>
+          <h2>Project Tools</h2>
+        </div>
         <table>
           <tr>
             <td>
-              <img src="https://via.placeholder.com/100" alt="React" />
+              <img src="logo192.png" alt="React" />
             </td>
             <td><p>React</p></td>
           </tr>
@@ -59,20 +71,26 @@ function About() {
             <td>
               <img src="https://via.placeholder.com/100" alt="GitHub" />
             </td>
+            <td>
+              <p>GitHub</p>
+            </td>
           </tr>
-          
-          <td>
-            <img src="https://via.placeholder.com/100" alt="GitHub" />
-            <p>GitHub</p>
-          </td>
-          <td>
-            <img src="https://via.placeholder.com/100" alt="Vercel" />
-            <p>Vercel</p>
-          </td>
-          <td>
-            <img src="https://via.placeholder.com/100" alt="Unity" />
-            <p>Unity</p>
-          </td>
+          <tr>
+            <td>
+              <img src="https://via.placeholder.com/100" alt="Vercel" />
+            </td>
+            <td>
+              <p>Vercel</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://via.placeholder.com/100" alt="Unity" />
+            </td>
+            <td>
+              <p>Unity</p>
+            </td>
+          </tr>
         </table>
       </div>
     </div>
