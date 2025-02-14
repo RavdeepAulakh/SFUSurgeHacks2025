@@ -146,8 +146,8 @@ function Home() {
   <div
         style={{
           width: "80%", // Make it smaller than the full width
-          backgroundColor: "#DEDBD2", // Light background
-          border: "3px solid #4A5759", // Light brown border
+          backgroundColor: "#dfc9ae", // Light background
+          border: "5px solid #86653D", // Light brown border
           padding: "20px",
           borderRadius: "10px",
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
