@@ -48,12 +48,14 @@ function Home() {
   };
 
 
+
   return (
     <div
   style={{
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
+    backgroundColor: "#F7E1D7", // Light pink background
     flexWrap: "wrap", // Allow items to wrap on smaller screens
     gap: "20px", // Space between game and leaderboard
     width: "100%",
@@ -144,8 +146,8 @@ function Home() {
   <div
         style={{
           width: "80%", // Make it smaller than the full width
-          backgroundColor: "#f9f9f9", // Light background
-          border: "3px solid #86653D", // Light brown border
+          backgroundColor: "#DEDBD2", // Light background
+          border: "3px solid #4A5759", // Light brown border
           padding: "20px",
           borderRadius: "10px",
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",

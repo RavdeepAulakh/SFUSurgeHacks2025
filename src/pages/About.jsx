@@ -2,24 +2,21 @@ import React from "react";
 import { useState } from "react";
 import "../App.css";
 const styles = {
-  about: {
-    textAlign: "center",
-    fontFamily: "'Pixelify Sans', sans-serif",
-    fontSize: "1rem",
-    margin: "40px 0",
-    backgroundColor: '#F7E1D7',
-  },
   description: {
     padding: "20px",
     margin: "40px",
+    backgroundColor: "#B0C4B1",
+    border: "5px solid #4A5759",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
   },
   team: {
     display: "grid",
     gridTemplateColumns: "repeat(4, 1fr)", // 4 columns
     gap: "20px",
     justifyContent: "center",
-    padding: "20px",
-    margin: "40px 0",
+    
   },
   teamMember: (isHovered) => ({
     textAlign: "center",
@@ -30,8 +27,7 @@ const styles = {
     boxShadow: isHovered ? "0px 4px 10px rgba(0, 0, 0, 0.2)" : "none",
   }),
   toolHeader: {
-    display: "inline-block",  // Makes it behave like an inline element
-    verticalAlign: "middle", // Aligns text to the baseline
+    alignItems: "left",
   },
   tool: {
     display: "grid",
@@ -42,12 +38,15 @@ const styles = {
     margin: "40px 0",
   },
   tr: (isHovered) => ({
-    transition: "background-color 0.3s ease, transform 0.2s ease",
-    backgroundColor: isHovered ? "#f0f0f0" : "transparent",
+    padding: "20px",
+    borderRadius: "8px",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    //backgroundColor: isHovered ? "#f0f0f0" : "transparent",
     transform: isHovered ? "scale(1.02)" : "scale(1)",
+    boxShadow: isHovered ? "0px 4px 10px rgba(0, 0, 0, 0.2)" : "none",
   }),
   img: {
-    maxWidth: "50px", // ✅ Fixed camelCase issue
+    maxWidth: "50px", // Fixed camelCase issue
     height: "auto",
     borderRadius: "8px", // Optional: makes images slightly rounded
     display: "block",
@@ -75,7 +74,16 @@ function About() {
   ];
 
   return (
-    <div style={styles.about}>
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      backgroundColor: "#F7E1D7", // Light pink background
+      flexWrap: "wrap", // Allow items to wrap on smaller screens
+      gap: "20px", // Space between game and leaderboard
+      width: "100%",
+      padding: "20px",
+    }}>
       <h1>About Us</h1>
       <div style={styles.description}>
         <h2>Project Description</h2>
