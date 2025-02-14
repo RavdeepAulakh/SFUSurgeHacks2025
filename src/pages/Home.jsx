@@ -87,30 +87,35 @@ function Home() {
       </div>
 
       {/* Leaderboard Section */}
-      <div
-        style={{
-          position: "absolute", // Position it absolutely
-          top: "20%", // Position it slightly higher up
-          right: "5%", // Place it on the right side
-          width: "250px", // Smaller width for the leaderboard
-          backgroundColor: "#d9f7be", // Light green background
-          border: "5px solid #86653D", // Light brown border
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-          maxHeight: "80vh", // Make sure it doesn't overflow the screen vertically
-          overflowY: "auto", // Allow scrolling if it overflows
-        }}
-      >
-        <h2>Leaderboard</h2>
-        <ul>
-          {players.map((player, index) => (
-            <li key={index}>
-              {player.name} - {player.score}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div
+    style={{
+        position: "absolute",
+        top: "20%",
+        right: "5%",
+        width: "250px",
+        backgroundColor: "#d9f7be",
+        border: "5px solid #86653D",
+        padding: "20px",
+        borderRadius: "10px",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+        maxHeight: "80vh",
+        overflowY: "auto",
+        textAlign: "center", // Center text inside the box
+    }}
+    >
+    <h2>Leaderboard</h2>
+    <ul style={{ listStyle: "none", padding: 0 }}>
+        {players.map((player, index) => (
+        <li 
+            key={index} 
+            style={{ display: "flex", justifyContent: "space-between", padding: "5px 0" }}
+        >
+            <span>{index + 1}. {player.name}</span>
+            <span>{player.score}</span>
+        </li>
+        ))}
+    </ul>
+    </div>
 
       {/* How to Play Section */}
       <div
