@@ -1,18 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
 
+// Initialize Supabase client
+const supabase = createClient(
+  process.env.REACT_APP_SUPABASE_URL,
+  process.env.REACT_APP_SUPABASE_ANON_KEY
+)
 function Home() {
-  // Example leaderboard players
-  const [players, setPlayers] = useState([
-    { name: "Player 1", score: 1000 },
-    { name: "Player 2", score: 900 },
-    { name: "Player 3", score: 800 },
-    { name: "Player 4", score: 700 },
-    { name: "Player 5", score: 600 }
-  ]);
+  // State for leaderboard players
+  const [players, setPlayers] = useState([]);
 
-  // Add a new player dynamically
-  const addPlayer = (name, score) => {
-    setPlayers([...players, { name, score }]);
+  // Fetch leaderboard data from Supabase when the component mounts
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+        const { data, error } = await supabase
+          .from("leaderboard")
+          .select("*")
+          .order("score", { ascending: false });
+      
+        if (error) {
+          console.error("Error fetching leaderboard:", error);
+        } else {
+          console.log("Fetched data:", data); // Log the data for debugging
+          if (data && data.length === 0) {
+            console.log("No records found in leaderboard.");
+          } else {
+            setPlayers(data);
+          }
+        }
+      };
+      
+
+    fetchLeaderboard();
+  }, []); // Empty array ensures this effect runs only once
+
+  // Add a new player to the leaderboard in Supabase
+  const addPlayer = async (name, score) => {
+    const { data, error } = await supabase
+      .from("leaderboard") // The name of the table
+      .insert([{ name, score }]);
+
+    if (error) {
+      console.error("Error adding player:", error);
+    } else {
+      setPlayers([...players, ...data]); // Update the state with the new player
+    }
   };
 
   return (
