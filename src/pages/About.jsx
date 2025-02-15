@@ -68,10 +68,10 @@ function About() {
   const [hoverRowIndex, setHoverRowIndex] = useState(null);
 
   const team = [
-    { name: "Emmy Fong", role: "Frontend Developer", image: "./emmy.png", description: "Emmy is a frontend developer with a passion for creating beautiful and responsive web applications." },
-    { name: "Evan Chen", role: "Backend Developer", image: "./evan.png", description: "Evan is a backend developer with a passion for creating scalable and efficient web applications." },
-    { name: "Camille Ng", role: "UI/UX Designer", image: "./camille.png", description: "Camille is a UI/UX designer with a passion for creating intuitive and user-friendly web applications." },
-    { name: "Ravdeep Aulakh", role: "Project Manager", image: "./ravdeep.png", description: "Ravdeep is a project manager with a passion for leading and coordinating web development projects." },
+    { name: "Emmy Fong", role: "Developer", image: "./emmy.png", description: "Emmy worked on the game in Unity, bringing the game mechanics and interactive elements to life with a focus on game development and optimization." },
+    { name: "Evan Chen", role: "Developer", image: "./evan.png", description: "Evan contributed to both the game development in Unity and the art, helping to shape the visual style and immersive experience of the game." },
+    { name: "Camille Ng", role: "Developer", image: "./camille.png", description: "Camille worked on the frontend website, designing and implementing the user interface to create a visually appealing and user-friendly web experience." },
+    { name: "Ravdeep Aulakh", role: "Developer", image: "./ravdeep.png", description: "Ravdeep worked on both the frontend and backend of the website, ensuring smooth integration of features and optimizing performance across the application." },
   ];
 
   const tools = [
