@@ -44,6 +44,11 @@ const styles = {
     justifyContent: "left",
     padding: "20px",
     margin: "40px 0",
+    backgroundColor: "#EDAFB8",
+    border: "5px solid #86653D",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
   },
   tr: (isHovered) => ({
     padding: "20px",
