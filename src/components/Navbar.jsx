@@ -62,23 +62,24 @@ const Navbar = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: hovered.home ? "15px" : "10px",
-            padding: "10px",
-            borderRadius: "5px",
+            padding: "5px",
+            borderRadius: "5px", // Makes the container round
             textDecoration: "none",
             color: "white",
             boxShadow: hovered.home ? "0px 4px 10px rgba(255, 255, 255, 0.3)" : "none",
             transition: "box-shadow 0.3s, gap 0.3s ease-in-out",
+            width: "auto",
           }}
         >
           <img 
             src="/igloo.png" 
             alt="Home Icon" 
-            style={{ width: "70px", height: "70px", objectFit: "contain" }} 
+            style={{ width: "60px", height: "60px", objectFit: "contain" }} 
           />
           <span
             style={{
               display: "inline-block",
-              width: hovered.home ? "60px" : "0px",
+              width: hovered.home ? "65px" : "0px",
               overflow: "hidden",
               whiteSpace: "nowrap",
               transition: "width 0.5s ease-in-out",
