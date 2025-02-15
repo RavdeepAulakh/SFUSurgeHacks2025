@@ -13,7 +13,8 @@ const styles = {
   },
   team: {
     display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)", // 4 columns
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", 
+    maxWidth: "100%",  // Prevents stretching too much
     gap: "20px",
     justifyContent: "center",
     
@@ -26,6 +27,13 @@ const styles = {
     transform: isHovered ? "scale(1.05)" : "scale(1)",
     boxShadow: isHovered ? "0px 4px 10px rgba(0, 0, 0, 0.2)" : "none",
   }),
+  teamImg: {
+    maxWidth: "100px", // Fixed camelCase issue
+    height: "auto",
+    borderRadius: "8px", // Optional: makes images slightly rounded
+    objectFit: "cover",
+    margin: "0 auto", // Center images inside their containers
+  },
   toolHeader: {
     alignItems: "left",
   },
@@ -60,10 +68,10 @@ function About() {
   const [hoverRowIndex, setHoverRowIndex] = useState(null);
 
   const team = [
-    { name: "Emmy Fong", role: "Frontend Developer", image: "https://via.placeholder.com/100", description: "Emmy is a frontend developer with a passion for creating beautiful and responsive web applications." },
-    { name: "Evan Chen", role: "Backend Developer", image: "https://via.placeholder.com/100", description: "Evan is a backend developer with a passion for creating scalable and efficient web applications." },
-    { name: "Camille Ng", role: "UI/UX Designer", image: "https://via.placeholder.com/100", description: "Camille is a UI/UX designer with a passion for creating intuitive and user-friendly web applications." },
-    { name: "Ravdeep Aulakh", role: "Project Manager", image: "https://via.placeholder.com/100", description: "Ravdeep is a project manager with a passion for leading and coordinating web development projects." },
+    { name: "Emmy Fong", role: "Frontend Developer", image: "./emmy.png", description: "Emmy is a frontend developer with a passion for creating beautiful and responsive web applications." },
+    { name: "Evan Chen", role: "Backend Developer", image: "./evan.png", description: "Evan is a backend developer with a passion for creating scalable and efficient web applications." },
+    { name: "Camille Ng", role: "UI/UX Designer", image: "./camille.png", description: "Camille is a UI/UX designer with a passion for creating intuitive and user-friendly web applications." },
+    { name: "Ravdeep Aulakh", role: "Project Manager", image: "./ravdeep.png", description: "Ravdeep is a project manager with a passion for leading and coordinating web development projects." },
   ];
 
   const tools = [
@@ -95,8 +103,9 @@ function About() {
   Get ready to stack, strategize, and save Grandma in this fun, fast-paced cake-building adventure!
         </p>
       </div>
-      
-      <h2>Project Team</h2>
+      <div style={{ width: "100%", textAlign: "center" }}>
+        <h2>Project Team</h2>
+      </div>
       <div style={styles.team}>
         {team.map((member, index) => (
           <div key={index}
@@ -104,7 +113,7 @@ function About() {
             onMouseEnter={() => setHoverIndex(index)}
             onMouseLeave={() => setHoverIndex(null)}
           >
-            <img src={member.image} alt={member.name} />
+            <img src={member.image} alt={member.name} style={styles.teamImg}/>
             <h3>{member.name}</h3>
             <p>{member.role}</p>
             <p>{member.description}</p>
