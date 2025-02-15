@@ -19,16 +19,15 @@
 ## How to Play
 
 1. **Start the Game**: Click the "Play" button to begin.
-2. **Stack Cakes**: Move the penguin to stack cakes on top of each other.
-3. **Avoid Obstacles**: Watch out for obstacles that move in the way and can destroy your cake stack.
+2. **Stack Cakes**: Click to stack the cakes.
+3. **Avoid Getting Cutoff**: Align the cake layers properly, to avoid making the layers too small.
 4. **Score**: Build the highest cake tower and try to achieve the best score.
 
 ---
 
 ## Controls
 
-- **Arrow keys**: Use the left and right arrow keys to move the penguin.
-- **Spacebar**: Press the spacebar to jump over obstacles.
+- **Mouse**: Click to align the cake layers.
 
 ---
 
