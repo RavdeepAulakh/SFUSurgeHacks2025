@@ -1,4 +1,4 @@
-![Pastry Panic Logo](pastrypanic.png)
+![Pastry Panic Logo](./public/pastrypanic.png)
 
 # Pastry Panic
 
