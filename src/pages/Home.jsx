@@ -70,7 +70,7 @@ function Home() {
       justifyContent: "center",
       alignItems: "center",
       flex: "1", // Allow it to take up available space
-      maxWidth: "500px", // Prevents it from getting too large
+      maxWidth: "900px", // Prevents it from getting too large
       minWidth: "350px", // Prevents it from shrinking too much
     }}
   >
