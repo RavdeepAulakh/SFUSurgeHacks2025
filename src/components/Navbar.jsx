@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Home, User } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -8,18 +7,34 @@ const Navbar = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
-      {/* Banner Image (Fixed Width, Centered) */}
-      <img
-        src="/pastrypanic.png"
-        alt="Pastry Panic Banner"
+      {/* Banner Wrapper with Background Image */}
+        <div
         style={{
-          width: "800px",
-          maxWidth: "100%",
-          height: "auto",
-          marginBottom: "10px",
-          borderRadius: "10px",
+            position: "relative",
+            width: "100%",
+            maxWidth: "100%",
+            height: "auto",
+            borderRadius: "10px",
+            backgroundImage: "url('/backgroundstars.png')", // Set your background image
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            padding: "20px", // Adjust padding for spacing
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
         }}
-      />
+        >
+        <img
+            src="/pastrypanic.png"
+            alt="Pastry Panic Banner"
+            style={{
+            width: "800px",
+            height: "auto",
+            borderRadius: "10px",
+            backgroundColor: "transparent", // Ensure the image itself has no background
+            }}
+        />
+        </div>
 
       {/* Navbar (Full-Width) */}
       <nav
@@ -32,9 +47,9 @@ const Navbar = () => {
           background: "#86653D",
           height: "60px",
           color: "white",
-          width: "100%",  // Ensures it spans the full width
-          borderRadius: "0px", // No border radius to match full width
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+          width: "100%",  
+          borderRadius: "0px", 
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
         }}
       >
         {/* Home Button */}
@@ -55,7 +70,11 @@ const Navbar = () => {
             transition: "box-shadow 0.3s, gap 0.3s ease-in-out",
           }}
         >
-          <Home size={24} />
+          <img 
+            src="/igloo.png" 
+            alt="Home Icon" 
+            style={{ width: "70px", height: "70px", objectFit: "contain" }} 
+          />
           <span
             style={{
               display: "inline-block",
@@ -87,7 +106,11 @@ const Navbar = () => {
             transition: "box-shadow 0.3s, gap 0.3s ease-in-out",
           }}
         >
-          <User size={24} />
+          <img 
+            src="/penguin.png" 
+            alt="About Icon" 
+            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
+          />
           <span
             style={{
               display: "inline-block",
